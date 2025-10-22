@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,14 +16,14 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Welcome to Flutter Filip'),
+          title: const Text(
+            'Welcome to Flutter Filip',
+            style: TextStyle(color: Colors.amber, fontSize: 40.0,),
+          ),
           backgroundColor: Colors.deepPurple,
         ),
-        body: Center(
-          child: Text('Hello2, Filip!'),
-        ),
+        body: Center(child: Image.asset('images/rocket.png'),),
       ),
     );
   }
 }
-
