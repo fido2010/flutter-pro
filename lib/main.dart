@@ -11,95 +11,51 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Rocket App',
+      title: 'Rocket app title',
       home: Scaffold(
-        appBar: AppBar(
-          actions: [
-            MenuAnchor(
-              builder:
-                  (BuildContext context, MenuController controller, Widget? child) {
-                return IconButton(
-                  onPressed: () {
-                    if (controller.isOpen) {
-                      controller.close();
-                    } else {
-                      controller.open();
-                    }
-                  },
-                  icon: const Icon(Icons.more_horiz),
-                  tooltip: 'Show menu',
-                );
-              },
-              menuChildren: [
-                MenuItemButton(
-                  child: Row(
-                    children: [
-                      const Icon(Icons.person),
-                      SizedBox(width: 8),
-                      const Text('Profile'),
-                    ],
-                  ),
-                  onPressed: () {
-                    print('Selected: Profile');
-                  },
-                ),
-                MenuItemButton(
-                  child: Row(
-                    children: [
-                      const Icon(Icons.logout),
-                      SizedBox(width: 8),
-                      const Text('Logout'),
-                    ],
-                  ),
-                  onPressed: () {
-                    print('Selected: Logout');
-                  },
-                ),
-                MenuItemButton(
-                  child: Row(
-                    children: [
-                      const Icon(Icons.settings),
-                      SizedBox(width: 8),
-                      const Text('Settings'),
-                    ],
-                  ),
-                  onPressed: () {
-                    print('Selected: Settings');
-                  },
-                ),
-              ],
-            ),
-          ],
-          title: const Text('Futbol'),
-        ),
-        body: SingleChildScrollView(
+        appBar: AppBar(title: const Text('Rocket App'), centerTitle: true),
+        body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    onPressed: () { print('Kick button pressed'); },
-                    child: const Text('Kick'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () { print('defend button pressed'); },
-                    child: const Text('Defend'),
-                  ),
-                ],
+              Text(
+                'Welcome!',
+                style: TextStyle(
+                  fontSize: 36,
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Montserrat',
+                ),
               ),
-              const SizedBox(height: 8),
-              Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Football_in_Bloomington%2C_Indiana%2C_1995.jpg/1200px-Football_in_Bloomington%2C_Indiana%2C_1995.jpg'),
-              const SizedBox(height: 8),
-              Image.asset('assets/images/lamine_yamal.jpg'),
-              const SizedBox(height: 8),
-              Image.asset('assets/images/lamine_yamal.jpg'),
-              const SizedBox(height: 8),
-              Image.asset('assets/images/lamine_yamal.jpg'),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: SizedBox(
+                  width: 250,
+                  height: 250,
+                  child: ClipOval(
+                    child: Image.asset(
+                      'assets/images/rocket.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              FilledButton(
+                onPressed: () {
+                  // Action when button is pressed
+                },
+                child: const Text('Login'),
+              ),
+              SizedBox(height: 10),
+              OutlinedButton(
+                onPressed: () {
+                  // Action when button is pressed
+                },
+                child: const Text('Register'),
+              ),
             ],
           ),
         ),
-        
       ),
     );
   }
