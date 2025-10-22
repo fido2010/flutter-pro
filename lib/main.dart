@@ -19,17 +19,20 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(
             'Welcome to Flutter Filip',
-            style: TextStyle(color: Colors.amber, fontSize: 40.0,),
+            style: TextStyle(color: Colors.amber, fontSize: 40.0),
           ),
           backgroundColor: Colors.deepPurple,
         ),
-        body: Column(children: [
-          Image.asset('images/rocket.png'),
-          Text( 
-            'Let\'s explore Flutter together!',
-            style: TextStyle(fontSize: 24.0),
+        body: SingleChildScrollView(
+          child: Column(
+            children: const [
+              Center(child: Image(image: AssetImage('images/rocket.png'))),
+              Center(child: Image(image: AssetImage('images/rocket.png'))),
+              Center(child: Image(image: AssetImage('images/rocket.png'))),
+              Text("nazdar"),
+            ],
           ),
-        ])
+        ),
       ),
     );
   }
