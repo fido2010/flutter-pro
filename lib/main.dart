@@ -75,9 +75,18 @@ class MyApp extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              ElevatedButton(
-                onPressed: () { print('Kick button pressed'); },
-                child: const Text('Kick'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    onPressed: () { print('Kick button pressed'); },
+                    child: const Text('Kick'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () { print('defend button pressed'); },
+                    child: const Text('Defend'),
+                  ),
+                ],
               ),
               const SizedBox(height: 8),
               Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Football_in_Bloomington%2C_Indiana%2C_1995.jpg/1200px-Football_in_Bloomington%2C_Indiana%2C_1995.jpg'),
