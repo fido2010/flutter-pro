@@ -10,10 +10,67 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Rocket App',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Title'),
+          actions: [
+            MenuAnchor(
+              builder:
+                  (BuildContext context, MenuController controller, Widget? child) {
+                return IconButton(
+                  onPressed: () {
+                    if (controller.isOpen) {
+                      controller.close();
+                    } else {
+                      controller.open();
+                    }
+                  },
+                  icon: const Icon(Icons.more_horiz),
+                  tooltip: 'Show menu',
+                );
+              },
+              menuChildren: [
+                MenuItemButton(
+                  child: Row(
+                    children: [
+                      const Icon(Icons.person),
+                      SizedBox(width: 8),
+                      const Text('Profile'),
+                    ],
+                  ),
+                  onPressed: () {
+                    print('Selected: Profile');
+                  },
+                ),
+                MenuItemButton(
+                  child: Row(
+                    children: [
+                      const Icon(Icons.logout),
+                      SizedBox(width: 8),
+                      const Text('Logout'),
+                    ],
+                  ),
+                  onPressed: () {
+                    print('Selected: Logout');
+                  },
+                ),
+                MenuItemButton(
+                  child: Row(
+                    children: [
+                      const Icon(Icons.settings),
+                      SizedBox(width: 8),
+                      const Text('Settings'),
+                    ],
+                  ),
+                  onPressed: () {
+                    print('Selected: Settings');
+                  },
+                ),
+              ],
+            ),
+          ],
+          title: const Text('Futbol'),
         ),
         body: SingleChildScrollView(
           child: Column(
