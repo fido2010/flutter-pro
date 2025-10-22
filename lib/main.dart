@@ -10,29 +10,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Filip',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      title: 'Rocket App',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'Welcome to Flutter Filip',
-            style: TextStyle(color: Colors.amber, fontSize: 40.0),
-          ),
-          backgroundColor: Colors.deepPurple,
+          title: const Text('Title'),
         ),
         body: SingleChildScrollView(
           child: Column(
-            children: const [
-              Center(child: Image(image: AssetImage('images/rocket.png'))),
-              Center(child: Image(image: AssetImage('images/rocket.png'))),
-              Center(child: Image(image: AssetImage('images/rocket.png'))),
-              Text("nazdar"),
+            children: [
+              Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Football_in_Bloomington%2C_Indiana%2C_1995.jpg/1200px-Football_in_Bloomington%2C_Indiana%2C_1995.jpg'),
+              Image.asset('assets/images/lamine_yamal.jpg'),
+              Image.asset('assets/images/lamine_yamal.jpg'),
+              Image.asset('assets/images/lamine_yamal.jpg'),
             ],
           ),
         ),
+        
       ),
     );
   }
