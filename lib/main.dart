@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Filip',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -22,7 +23,13 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.deepPurple,
         ),
-        body: Center(child: Image.asset('images/rocket.png'),),
+        body: Column(children: [
+          Image.asset('images/rocket.png'),
+          Text( 
+            'Let\'s explore Flutter together!',
+            style: TextStyle(fontSize: 24.0),
+          ),
+        ])
       ),
     );
   }
